@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import "./App.css";
-import Dashboard from "./components/Dashboard";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./Routes/routes";
+import { Toaster } from "sonner";
+
 
 const darkTheme = createTheme({
   palette: {
@@ -13,9 +16,8 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Box sx={{ p: 3 }}>
-        <Dashboard />
-      </Box>
+            <RouterProvider router={routes} />
+      <Toaster expand={true} richColors />
     </ThemeProvider>
   );
 }

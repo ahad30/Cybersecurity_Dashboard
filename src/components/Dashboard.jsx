@@ -10,6 +10,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Box
 } from "@mui/material";
 import StatusCard from "./StatusCard";
 import LineChart from "./LineChart";
@@ -51,51 +52,35 @@ const alerts = [
   { id: 4, severity: "High", source: "DDoS", time: "01:20 PM" },
 ];
 
+// src/components/Dashboard.jsx
 export default function Dashboard() {
   return (
-     <>
-     <div className="container mx-auto md:p-4">
- <Grid className="grid grid-cols-1 md:grid-cols-3 gap-3"  sx={{ mb: 3 }}>
-        <Grid item xs={12} sm={4}>
-          <StatusCard title="Active Threats" value="24" color="#ff6384" />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <StatusCard title="Open Vulnerabilities" value="12" color="#36a2eb" />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <StatusCard title="Incidents Today" value="5" color="#4bc0c0" />
-        </Grid>
-      </Grid>
+    <>
+<div className="lg:max-w-6xl p-4 mx-auto">
+        {/* Status Cards Section */}
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' }, gap: 3, mb: 3 }}>
+        <StatusCard title="Active Threats" value="24" color="#ff6384" />
+        <StatusCard title="Open Vulnerabilities" value="12" color="#36a2eb" />
+        <StatusCard title="Incidents Today" value="5" color="#4bc0c0" />
+      </Box>
 
-      {/* Second Row: 2 Charts */}
-      <Grid className="grid grid-cols-1 md:grid-cols-2 gap-5"   sx={{ mb: 3 }}>
+      {/* Charts Section */}
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '2fr 1fr' }, gap: 3, mb: 3 }}>
+        <Paper sx={{ p: 2 }}
+        >
+          <Typography variant="h6" gutterBottom>Real-time Threat Activity</Typography>
+          <LineChart data={threatData} />
+        </Paper>
+        <Paper sx={{ p: 2 }}>
+          <Typography variant="h6" gutterBottom>Top Attack Sources</Typography>
+          <PieChart data={attackSources} />
+        </Paper>
+      </Box>
 
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Typography variant="h6" gutterBottom>
-              Top Attack Sources
-            </Typography>
-            <PieChart data={attackSources} />
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <Paper sx={{ p: 2 }}>
-            <Typography variant="h6" gutterBottom>
-              Real-time Threat Activity
-            </Typography>
-            <LineChart data={threatData} />
-          </Paper>
-        </Grid>
-      </Grid>
-
-      {/* Third Row: Full-width Table */}
-      <Grid className="">
-        <Grid item xs={12}>
-          <Paper sx={{ p: 2 }}>
-            <Typography variant="h6" gutterBottom>
-              Recent Security Alerts
-            </Typography>
-            <TableContainer>
+      {/* Table Section */}
+      <Paper sx={{ p: 2 }}>
+        <Typography variant="h6" gutterBottom>Recent Security Alerts</Typography>
+        <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow>
@@ -125,11 +110,8 @@ export default function Dashboard() {
                 </TableBody>
               </Table>
             </TableContainer>
-          </Paper>
-        </Grid>
-      </Grid>
-
-    </div>
-   </>
+      </Paper>
+</div>
+    </>
   );
 }
