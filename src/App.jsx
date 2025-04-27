@@ -4,7 +4,7 @@ import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import { routes } from "./Routes/routes";
 import { Toaster } from "react-hot-toast";
-import LoadingPage from "./components/LoadingPage";
+import Loading from "./components/Loading";
 import AuthProvider from "./Providers/AuthProvider";
 
 
@@ -23,7 +23,7 @@ function App() {
   // If loading, show the loading page
   if (isLoading) {
     return <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-       <LoadingPage />
+       <Loading />
     </div>;
   }
   return (

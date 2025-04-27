@@ -1,6 +1,5 @@
-import { MdContacts, MdNotificationImportant, MdOutlineShoppingCartCheckout } from "react-icons/md";
+import React from "react";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { TfiLayoutSlider } from "react-icons/tfi";
 import DashboardStatistics from "../Pages/Dashboard/Admin/Statistics/DashboardStatistics";
 
 
@@ -9,7 +8,7 @@ import DashboardStatistics from "../Pages/Dashboard/Admin/Statistics/DashboardSt
 export const adminRoutes = [
   {
     path: "home",
-    label: "Dashboard",
+    label: "Dashboard Statistics",
     element: <DashboardStatistics />,
     icon: <MdOutlineDashboardCustomize size={20}></MdOutlineDashboardCustomize>,
     permissionName: "view dashboard",

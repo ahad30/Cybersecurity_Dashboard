@@ -10,8 +10,8 @@ const PrivateRoute = ({ children }) => {
     // console.log(location.pathname);
 
     if (loading) {
-        return <div className="flex justify-center">
-             <Spin className="h-16 w-16 text-gray-900/50" />
+        return <div className="flex flex-col h-screen items-center justify-center">
+             <Spin size="large" className=" text-gray-900/50" />
                </div>
     }
 
