@@ -1,25 +1,82 @@
-# Cybersecurity Dashboard
+Here's the enhanced README.md incorporating Firebase Authentication:
 
+```markdown
+# 🔒 Cybersecurity Dashboard
 
-A responsive dashboard for monitoring security threats in real-time, built with React, Vite, and Chart.js.
+![Dashboard Preview](./public/dashboard-preview.png)
 
-🔗 **Live Demo:** [https://cybersecurity-dashboard-red.vercel.app/](https://cybersecurity-dashboard-red.vercel.app/)
+A responsive dashboard for monitoring security threats with user authentication, built with React, Vite, and Firebase.
+
+🌐 **Live Demo:** [https://cybersecurity-dashboard-red.vercel.app/](https://cybersecurity-dashboard-red.vercel.app/)
 
 ## ✨ Features
 
+- **Secure Authentication**: Firebase-powered login system
+- **Role-based Access**: Different views for admins vs regular users
 - **Real-time Monitoring**: Live threat activity visualization
-- **Responsive Design**: Optimized for desktop, tablet & mobile
-- **Security Overview**: At-a-glance status cards
-- **Attack Analysis**: Interactive pie chart of threat sources
-- **Alert Management**: Detailed incident table with severity indicators
+- **Responsive Design**: Works on all device sizes
+- **Security Overview**: Status cards with key metrics
+- **Attack Analysis**: Interactive threat distribution charts
 
-## 🛠️ Technologies
+## 🛠️ Tech Stack
 
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+- ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 - ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 - ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 - ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+## 🚀 Quick Start
 
-   
-   
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/cybersecurity-dashboard.git
+   ```
+
+2. Set up Firebase:
+   - Create a project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Email/Password and Google authentication
+
+3. Add your Firebase config:
+   ```bash
+   cp .env.example .env
+   ```
+   Fill in your Firebase credentials:
+   ```env
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+
+4. Install dependencies and run:
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+
+## 🚀 Deployment
+
+1. Build your project:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy to Vercel:
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fcybersecurity-dashboard)
+
+3. Add Firebase environment variables in Vercel:
+
+   ![Vercel Env Vars](https://i.imgur.com/J5Q8y0M.png)
+
+## 📜 License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
+**Note**: Ensure proper Firebase security rules are configured before production use.
+```
