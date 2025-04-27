@@ -10,7 +10,6 @@ A responsive dashboard for monitoring security threats with user authentication,
 ## ✨ Features
 
 - **Secure Authentication**: Firebase-powered login system
-- **Role-based Access**: Different views for admins vs regular users
 - **Real-time Monitoring**: Live threat activity visualization
 - **Responsive Design**: Works on all device sizes
 - **Security Overview**: Status cards with key metrics
