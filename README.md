@@ -1,9 +1,7 @@
-Here's the enhanced README.md incorporating Firebase Authentication:
 
 ```markdown
 # 🔒 Cybersecurity Dashboard
 
-![Dashboard Preview](./public/dashboard-preview.png)
 
 A responsive dashboard for monitoring security threats with user authentication, built with React, Vite, and Firebase.
 
@@ -56,27 +54,3 @@ A responsive dashboard for monitoring security threats with user authentication,
    npm install
    npm run dev
    ```
-
-
-## 🚀 Deployment
-
-1. Build your project:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy to Vercel:
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fcybersecurity-dashboard)
-
-3. Add Firebase environment variables in Vercel:
-
-   ![Vercel Env Vars](https://i.imgur.com/J5Q8y0M.png)
-
-## 📜 License
-
-MIT License - See [LICENSE](LICENSE) for details.
-
----
-
-**Note**: Ensure proper Firebase security rules are configured before production use.
-```
