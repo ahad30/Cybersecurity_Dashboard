@@ -51,25 +51,11 @@ const Login = () => {
             });
     }
 
-    const handleGithubSignIn = () => {
-        setIsLoading(true);
-        signInWithGithub()
-            .then(result => {
-                console.log(result.user);
-                toast.success('Logged in successfully');
-                navigate(location?.state ? location.state : '/');
-            })
-            .catch(error => {
-                console.error(error);
-                toast.error("Github login failed");
-            })
-            .finally(() => {
-                setIsLoading(false);
-            });
-    }
+
 
     return (
-        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <section className='py-16'>
+             <div className="mx-auto lg:max-w-[600px] bg-gray-100 rounded-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg text-center">
                 <h1 className="text-2xl font-bold sm:text-3xl">Log in here!</h1>
             </div>
@@ -136,17 +122,12 @@ const Login = () => {
                     disabled={isLoading}
                     className={isLoading ? "opacity-50 cursor-not-allowed" : ""}
                 >
-                    <FaGoogle size={25} />
+                    <FaGoogle className='text-blue-500' size={25} />
                 </button>
-                {/* <button 
-                    onClick={handleGithubSignIn}
-                    disabled={isLoading}
-                    className={isLoading ? "opacity-50 cursor-not-allowed" : ""}
-                >
-                    <FaGithub size={25} />
-                </button> */}
+             
             </div>
         </div>
+        </section>
     )
 }
 
